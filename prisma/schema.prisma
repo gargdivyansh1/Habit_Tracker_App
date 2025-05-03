@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+  binaryTargets = ["native", "windows"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(uuid())
+  email    String   @unique
+  password String
+  name     String?
+  habits   Habit[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Notification Notification[]
+}
+
+model Habit {
+  id        String   @id @default(uuid())
+  name      String
+  icon      String
+  goal      Float
+  unit      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  entries   HabitEntry[]
+  reminders Reminder[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model HabitEntry {
+  id        String   @id @default(uuid())
+  value     Float?
+  date      DateTime
+  habitId   String
+  habit     Habit    @relation(fields: [habitId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([habitId, date])
+}
+
+model Reminder {
+  id        String   @id @default(uuid())
+  time      String
+  habitId   String
+  habit     Habit    @relation(fields: [habitId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  habitName String
+  message   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
