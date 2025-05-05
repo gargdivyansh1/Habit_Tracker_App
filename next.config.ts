@@ -32,6 +32,10 @@ const nextConfig = {
   images: {
     domains: ['randomuser.me'],
   },
+
+  experimental: {
+    optimizeFonts: false 
+  }
 };
 
 module.exports = nextConfig;
