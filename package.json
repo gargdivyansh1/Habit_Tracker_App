@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "prisma generate",
+    "postinstall": "npm rebuild --platform=linux --arch=x64 prisma generate",
     "dev": "next dev",
     "build": "prisma generate --no-engine && LIGHTNINGCSS_FORCE_WASM=true next build",
     "start": "next start",
