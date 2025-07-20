@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Habit Tracker App
 
-## Getting Started
+A modern, single-page habit tracking application built with **Next.js 14**, **TypeScript**, **TailwindCSS**, and **Prisma**. Easily track your daily habits, visualize progress, and build consistency—all in a minimal and responsive UI.
 
-First, run the development server:
+<p align="center">
+  <img src="public\first.png" width="1000"/>
+  <img src="public\second.png" width="1000"/>
+  <img src="public\third.png" width="1000"/>
+  <img src="public\four.png" width="1000"/>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Features
+
+- ✅ **Single-page UI** with smooth transitions
+- 🗓️ **Daily Habit Tracking** with clickable toggles
+- 📊 **Progress Visualization** (per habit + total)
+- 🔁 **Recurring Habits Support**
+- 🎨 Beautiful **TailwindCSS-based UI**
+- 🧠 Built using **Next.js App Router** and **TypeScript**
+- 📦 Persistent Data with **Prisma + SQLite/PostgreSQL**
+- 🧪 Easy to test and extend
+- 🔐 Authentication-ready structure (can integrate Clerk/AuthJS)
+- Mandatory daily to fill the entry
+- Notifiaction support for reminding each habit
+
+---
+
+## 🧩 Tech Stack
+
+| Layer         | Stack                    |
+|---------------|--------------------------|
+| Frontend      | Next.js 14 (App Router), React 18 |
+| Styling       | Tailwind CSS             |
+| Language      | TypeScript               |
+| ORM / DB      | Prisma + SQLite/PostgreSQL |
+| Build Tools   | Vite + Next.js Compiler |
+| Icons         | Lucide Icons             |
+| Deployment    | Vercel / Railway         |
+
+---
+
+## 📁 Folder Structure
+```
+habit-tracker-app/
+├── app/ # App router layout and pages
+│ ├── layout.tsx
+│ └── page.tsx # Main single-page interface
+├── components/ # UI Components (HabitCard, HabitList, ToggleBtn, etc.)
+├── lib/ # Utility functions
+├── prisma/ # Prisma schema + seed
+├── public/ # Static assets (icons, screenshot)
+├── styles/ # Tailwind + global styles
+├── .env # Environment variables
+├── next.config.ts
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation
 
-## Learn More
+```bash
+git clone https://github.com/yourusername/habit-tracker-app.git
+cd habit-tracker-app
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Setup database (SQLite/PostgreSQL)
+npx prisma generate
+npx prisma db push
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run the app
+npm run dev
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
