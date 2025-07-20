@@ -63,7 +63,7 @@ habit-tracker-app/
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/habit-tracker-app.git
+git clone https://github.com/gargdivyansh1/habit_tracker_app.git
 cd habit-tracker-app
 
 # Install dependencies
