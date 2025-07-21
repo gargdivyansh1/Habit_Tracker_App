@@ -37,7 +37,7 @@ A modern, single-page habit tracking application built with **Next.js 14**, **Ty
 | ORM / DB      | Prisma + SQLite/PostgreSQL |
 | Build Tools   | Vite + Next.js Compiler |
 | Icons         | Lucide Icons             |
-| Deployment    | Vercel / Railway         |
+| Deployment    | Vercel / Railway (soon)        |
 
 ---
 
